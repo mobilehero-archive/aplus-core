@@ -1,0 +1,39 @@
+{
+  "name": "@mobile/alloy-plus",
+  "version": "0.0.2",
+  "description": "Mobile framework for building upon Appcelerator Alloy projects",
+  "keywords": [],
+  "homepage": "git://github.com/mobilehero/alloy-plus",
+  "bugs": {
+    "url": "https://github.com/mobilehero/alloy-plus/issues",
+    "email": "info@mobilehero.me"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "MobileHero",
+    "email": "info@mobilehero.me",
+    "url": "https://github.com/mobilehero"
+  },
+  "main": "./alloy-plus.js",
+  "scripts": {
+    "add": "git add -A",
+    "prepush": "npm run add && node scripts/version",
+    "push": "git push",
+    "autopull": "node scripts/autopull",
+    "postinstall": "node scripts/postinstall"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mobilehero/alloy-plus.git"
+  },
+  "devDependencies": {
+    "semver": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "tiapp-dir": "0.0.2"
+  }
+}
