@@ -1,5 +1,5 @@
 {
-  "name": "@mobile/alloy-plus",
+  "name": "alloy-plus",
   "version": "0.0.2",
   "description": "Mobile framework for building upon Appcelerator Alloy projects",
   "keywords": ["Appcelerator", "Alloy", "MobileHero", "Alloy+"],
