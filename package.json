@@ -2,7 +2,7 @@
   "name": "@mobile/alloy-plus",
   "version": "0.0.2",
   "description": "Mobile framework for building upon Appcelerator Alloy projects",
-  "keywords": [],
+  "keywords": ["Appcelerator", "Alloy", "MobileHero", "Alloy+"],
   "homepage": "git://github.com/mobilehero/alloy-plus",
   "bugs": {
     "url": "https://github.com/mobilehero/alloy-plus/issues",
