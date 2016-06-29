@@ -37,8 +37,9 @@ module.exports = handler;
 
 var loadConfig = function() {
 	console.log("Loading alloy config file");
-	handler.config = require(path.join(path.relative(__dirname, handler.event.dir.resourcesPlatform), "alloy", "CFG"));
-	// handler.config = require(path.join(handler.event.dir.resourcesPlatform, "alloy", "CFG"));
+	// handler.config = require(path.join(path.relative(__dirname, handler.event.dir.resourcesPlatform), "alloy", "CFG"));
+	handler.config = require(path.join(handler.event.dir.resourcesPlatform, "alloy", "CFG"));
+	// handler.logger.trace(JSON.stringify(handler.config, null, 2));
 	handler.config.tasks = handler.config.tasks || {};
 
 	_.defaults(handler.config.tasks, {
@@ -72,22 +73,22 @@ function executeScripts(eventName) {
 	var tasks = handler.config.tasks[eventName] || [];
 	handler.logger.error("tasks: " + JSON.stringify(tasks));
 
-	var taskParams = {
-		event: handler.event,
-		config: handler.config,
-		logger: handler.logger
-	};
-
 	_.forEach(tasks, function(task) {
 
 		if(_.isString(task)) {
 			task = { id: task }
 		}
 
-		_.assign(task, taskParams);
+		var taskParams = {
+			event: handler.event,
+			config: handler.config,
+			logger: handler.logger
+		};
+
+		_.defaults(taskParams, task);
 		handler.logger.trace("executing task: " + task.id);
 		var target = require(resolve.sync(task.id, { basedir: handler.event.dir.project }));
-		_.isFunction(target) && target(task);
+		_.isFunction(target) && target(taskParams);
 
 	});
 
@@ -97,8 +98,8 @@ var events = ["preload", "precompile", "postcompile", "appjs"];
 _.forEach(events, function(eventName) {
 	handler[eventName] = function(event, logger) {
 		logger.warn("********************* STARTING EVENT: " + eventName + " ***************************");
-		handler.event = event;
 		handler.logger = logger;
+		handler.event = event;
 		executeScripts(eventName);
 		logger.warn("********************* FINISHED EVENT: " + eventName + " ***************************");
 	}
