@@ -29,7 +29,7 @@
 var _ = require("lodash");
 var path = require("path");
 var resolve = require("resolve");
-var config;
+// var config;
 var _event;
 
 function handler() {}
@@ -37,12 +37,11 @@ module.exports = handler;
 
 var loadConfig = function() {
 	console.log("Loading alloy config file");
-	config = require(path.join(path.relative(__dirname, handler.event.dir.resourcesPlatform), "alloy", "CFG"));
-	// config.mobile = config.mobile || {};
-	// config.mobile.scripts = config.mobile.scripts || {};
-	config.tasks = config.tasks || {};
+	handler.config = require(path.join(path.relative(__dirname, handler.event.dir.resourcesPlatform), "alloy", "CFG"));
+	// handler.config = require(path.join(handler.event.dir.resourcesPlatform, "alloy", "CFG"));
+	handler.config.tasks = handler.config.tasks || {};
 
-	_.defaults(config.mobile.scripts, {
+	_.defaults(handler.config.tasks, {
 		preload: [],
 		precompile: [],
 		postcompile: [],
@@ -70,26 +69,26 @@ Object.defineProperty(handler, "event", {
 
 function executeScripts(eventName) {
 
-	var tasks = config.tasks[eventName] || [];
+	var tasks = handler.config.tasks[eventName] || [];
 	handler.logger.error("tasks: " + JSON.stringify(tasks));
 
+	var taskParams = {
+		event: handler.event,
+		config: handler.config,
+		logger: handler.logger
+	};
+
 	_.forEach(tasks, function(task) {
-		task = _.template(task)({
-			event: handler.event,
-			config: handler.config,
-			logger: handler.logger
-		})
-		handler.logger.trace("task: " + task);
-		var scriptArgs = task.split(" ");
-		var target = require(resolve.sync(scriptArgs.shift(), { basedir: handler.event.dir.project }));
 
-		scriptArgs.unshift({
-			logger: handler.logger,
-			event: handler.event,
-			config: handler.config
-		})
+		if(_.isString(task)) {
+			task = { id: task }
+		}
 
-		_.isFunction(target) && _.spread(target)(scriptArgs);
+		_.assign(task, taskParams);
+		handler.logger.trace("executing task: " + task.id);
+		var target = require(resolve.sync(task.id, { basedir: handler.event.dir.project }));
+		_.isFunction(target) && target(task);
+
 	});
 
 }
