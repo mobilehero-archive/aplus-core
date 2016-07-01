@@ -1,16 +1,17 @@
 {
-  "name": "alloy-plus",
-  "version": "0.0.3-beta.3",
+  "name": "@aplus/core",
+  "version": "0.0.5-beta.1",
   "description": "Mobile framework for building upon Appcelerator Alloy projects",
   "keywords": [
     "Appcelerator",
     "Alloy",
     "MobileHero",
-    "Alloy+"
+    "Alloy+",
+    "aplus"
   ],
-  "homepage": "git://github.com/mobilehero/alloy-plus",
+  "homepage": "git://github.com/mobilehero/aplus-core",
   "bugs": {
-    "url": "https://github.com/mobilehero/alloy-plus/issues",
+    "url": "https://github.com/mobilehero/aplus-core/issues",
     "email": "info@mobilehero.me"
   },
   "license": "MIT",
@@ -19,7 +20,7 @@
     "email": "info@mobilehero.me",
     "url": "https://github.com/mobilehero"
   },
-  "main": "./alloy-plus.js",
+  "main": "./aplus-core.js",
   "scripts": {
     "add": "git add -A",
     "add-version": "npm run add && node scripts/version",
@@ -29,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mobilehero/alloy-plus.git"
+    "url": "git://github.com/mobilehero/aplus-core.git"
   },
   "devDependencies": {
     "semver": "^5.1.0"
