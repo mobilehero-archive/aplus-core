@@ -16,9 +16,9 @@
   },
   "license": "MIT",
   "author": {
-    "name": "MobileHero",
-    "email": "info@mobilehero.me",
-    "url": "https://github.com/mobilehero"
+    "name": "Brenton House",
+    "email": "brenton.house@gmail.com",
+    "url": "https://github.com/brentonhouse"
   },
   "main": "./aplus-core.js",
   "scripts": {
