@@ -104,7 +104,7 @@ To use plugins in your app, add entries for your plugins to your app's `config.j
 
 ## Alloy+ Plugins 
 
-> ** Coming Soon! :mega: **
+> **Coming Soon! :mega:**
 
 - [`npm`][]: Execute npm during the Alloy build process
 - [`babel`][]: Run babel transformations on your code during the build process
