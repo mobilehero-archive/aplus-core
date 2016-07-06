@@ -1,6 +1,6 @@
 {
   "name": "@aplus/core",
-  "version": "0.0.5-beta.2",
+  "version": "0.0.5-beta.3",
   "description": "Mobile framework for building upon Appcelerator Alloy projects",
   "keywords": [
     "Appcelerator",
@@ -27,7 +27,7 @@
     "add-version": "node scripts/version",
     "push": "npm run commit --",
     "commit": "npm run add-version --",
-    "postpush": "git push",
+    "postpush": "git push && git push --tags",
     "autopull": "node scripts/autopull"
   },
   "repository": {

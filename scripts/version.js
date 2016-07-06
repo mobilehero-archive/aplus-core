@@ -11,7 +11,7 @@ if(args.length === 0) {
 	message = args.join(" ");
 }
 
-if( !_.includes(message, "{{")){
+if(!_.includes(message, "{{")) {
 	message = ":checkered_flag: v{{version}} :heavy_minus_sign: " + message;
 }
 
@@ -25,7 +25,7 @@ console.log("new_version: " + new_version);
 
 // Format commit message
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
-var formatted_message = _.template(message)({version:new_version});
+var formatted_message = _.template(message)({ version: new_version });
 console.log("formatted_message: " + formatted_message);
 
 var git_cmd = "git";
@@ -59,8 +59,26 @@ npm.on('close', function(code) {
 	git.on('close', function(code) {
 		console.log("Finished: " + code);
 		console.log("-----------------------------------------------------------");
-	});
 
+		//kick off git_cmd process
+		git = spawn(git_cmd, ['tag', 'v' + new_version]);
+
+		//spit stdout to screen
+		git.stdout.on('data', function(data) {
+			process.stdout.write(data.toString());
+		});
+
+		//spit stderr to screen 	
+		git.stderr.on('data', function(data) {
+			process.stdout.write(data.toString());
+		});
+
+		git.on('close', function(code) {
+			console.log("Finished: " + code);
+			console.log("-----------------------------------------------------------");
+
+		});
+	});
 	console.log("Finished: " + code);
 	console.log("-----------------------------------------------------------");
 });
