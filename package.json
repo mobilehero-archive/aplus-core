@@ -1,6 +1,6 @@
 {
   "name": "@aplus/core",
-  "version": "0.0.5-beta.1",
+  "version": "0.0.5-beta.2",
   "description": "Mobile framework for building upon Appcelerator Alloy projects",
   "keywords": [
     "Appcelerator",
@@ -23,8 +23,10 @@
   "main": "./aplus-core.js",
   "scripts": {
     "add": "git add -A",
-    "add-version": "npm run add && node scripts/version",
-    "push": "npm run add-version --",
+    "preadd-version": "npm run add",
+    "add-version": "node scripts/version",
+    "push": "npm run commit --",
+    "commit": "npm run add-version --",
     "postpush": "git push",
     "autopull": "node scripts/autopull"
   },
@@ -41,6 +43,7 @@
   "dependencies": {
     "lodash": "^4.13.1",
     "resolve": "^1.1.7",
-    "tiapp-dir": "0.0.2"
+    "tiapp-dir": "0.0.2",
+    "uglify-js": "^2.6.4"
   }
 }

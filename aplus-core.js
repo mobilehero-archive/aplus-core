@@ -32,8 +32,27 @@ var resolve = require("resolve");
 // var config;
 var _event;
 
+
 function handler() {}
 module.exports = handler;
+
+// var uglifyjs = require("uglify-js");
+handler.preparse = function(func) {
+	console.error("********* WRAPPING uglifyjs.parse **********");
+	return _.wrap(func, function(func, code, options) {
+		console.error("********* PRE:PARSE **********");
+		// console.warn(JSON.stringify(code, null, 2));
+		// console.warn(JSON.stringify(options, null, 2));
+
+		var params = { code: code };
+		executeScripts("preparse", params);
+		// console.error("final-code: " + params.code);
+		return func(params.code, options);
+
+	});
+}
+
+
 
 var loadConfig = function() {
 	console.log("Loading alloy config file");
@@ -68,10 +87,12 @@ Object.defineProperty(handler, "event", {
 	configurable: false
 });
 
-function executeScripts(eventName) {
+function executeScripts(eventName, params) {
 
 	var tasks = handler.config.tasks[eventName] || [];
 	handler.logger.error("tasks: " + JSON.stringify(tasks));
+
+	params = params || {};
 
 	_.forEach(tasks, function(task) {
 
@@ -82,13 +103,19 @@ function executeScripts(eventName) {
 		var taskParams = {
 			event: handler.event,
 			config: handler.config,
-			logger: handler.logger
+			logger: handler.logger,
+			code: params.code,
 		};
 
 		_.defaults(taskParams, task);
 		handler.logger.trace("executing task: " + task.id);
 		var target = require(resolve.sync(task.id, { basedir: handler.event.dir.project }));
 		_.isFunction(target) && target(taskParams);
+
+		if(taskParams.code) {
+			// handler.logger.error(taskParams.code);
+			params.code = taskParams.code;
+		}
 
 	});
 
