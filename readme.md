@@ -21,6 +21,7 @@
 	- [Install Alloy+ Core only](#install-alloy-core-only)
 	- [Install Alloy+ Bundle 📦](#install-alloy-bundle-)
 - [Usage](#usage)
+- [Templated Parameters](#templated-parameters)
 - [Alloy+ Plugins](#alloy-plugins)
 - [Need Help?](#need-help)
 - [License](#license)
@@ -93,14 +94,33 @@ To use plugins in your app, add entries for your plugins to your app's `config.j
 
 ```json
 	{
-		"tasks": {
-			"auto": ["some-aplus-module-that-supports-auto"],
-			"preload": [ "some-aplus-plugin" ],
-			"precompile": [ "some-other-module" ],
-			"postcompile": [ "some-other-module" ],
-			"appjs": [ "some-other-module" ]
+	"tasks": [
+		"@aplus/npm",
+		"@aplus/underscore",
+		"@aplus/babel",
+		"@aplus/node",
+		{
+			"module": "some-other-aplus-plugin",
+			"dirname": "${event.dir.lib}",
+			"args": ["these", "are", "my", "args"]
+		}
+	],
 	}
 ```
+
+## Templated Parameters
+
+You can use templated parameters in your variables (if supported by your plugin). 
+The following parameters are passed to every plugin and can be used in templating:
+
+
+| property  	|   description	|
+|---	|---	|
+|  `event` 	|   The `event` object provides a set of objects and values which may be useful for building tasks. The object comes from the [`alloy.jmk` build task](https://wiki.appcelerator.org/pages/viewpage.action?pageId=35620079).	  **NOTE:**  There is an additional property not found in the original event object -- `event.dir.resourcesPlatform`.  This property is the platorm specific directory under the Alloy project's `Resource` directory (i.e. /Resources/iphone).|
+|  `config` 	|   The `config` object is the result of the [`config.json` file](https://wiki.appcelerator.org/pages/viewpage.action?pageId=35620077) after it has been processed by Alloy (to handle themes/platforms/etc).	|
+|  `logger` 	|   The `logger` object provides a reference to the logger.  See the [Appcelerator alloy.jmk wiki page](https://wiki.appcelerator.org/pages/viewpage.action?pageId=35620079) for a list of methods and properties.	|
+|  `code` 	|   The `code` object is the source code of an module before it is parsed by uglifyjs in Alloy.  This is only available in the alloy+ *exclusive* event: `preparse`.	|
+
 
 ## Alloy+ Plugins 
 
