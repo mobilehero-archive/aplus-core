@@ -149,10 +149,10 @@ See the [license.md](https://github.com/mobilehero/aplus-core/blob/master/licens
 
 _Superhero Studios Incorporated and this project are in no way affiliated with any of the following companies:_
 
-  * _Appcelerator, Inc_
-  * _Axway Inc_
-  * _Apple Inc_
-  * _Google Inc_
+- _Appcelerator, Inc_
+- _Axway Inc_
+- _Apple Inc_
+- _Google Inc_
 
 Alloy is developed by Appcelerator and the community and is Copyright (c) 2012 by Appcelerator, Inc. All Rights Reserved.   
 Alloy is made available under the Apache Public License, version 2. See their [LICENSE](https://github.com/appcelerator/alloy/blob/master/LICENSE) file for more information.  

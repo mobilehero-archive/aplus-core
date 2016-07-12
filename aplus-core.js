@@ -85,11 +85,8 @@ function configureTasks(tasks) {
 	_.forEach(tasks, function(task) {
 		// handler.logger.trace("task: " + JSON.stringify(task, null, 2));
 		if(_.isString(task)) {
-			// task = { name: task }
-			// handler.logger.trace("getting default tasks for module: " + task);
-			// handler.logger.error(handler.event.dir.project);
+			handler.logger.trace("getting default tasks for module: " + task);
 			var target = require(resolve.sync(task, { basedir: handler.event.dir.project }));
-			// handler.logger.warn("imported tasks: " + JSON.stringify(importedTasks, null, 2));
 			importedTasks = importedTasks.concat(target.tasks || []);
 			// handler.logger.error("target.tasks: " + JSON.stringify(target.tasks, null, 2));
 			// handler.logger.warn("imported tasks: " + JSON.stringify(importedTasks, null, 2));
@@ -122,47 +119,13 @@ var loadConfig = function() {
 	handler.logger.debug("Loading alloy config file");
 	// handler.config = require(path.join(path.relative(__dirname, handler.event.dir.resourcesPlatform), "alloy", "CFG"));
 	handler.config = require(path.join(handler.event.dir.resourcesPlatform, "alloy", "CFG"));
+	handler.logger.trace(JSON.stringify(handler.event, null, 2));
 	// handler.logger.trace(JSON.stringify(handler.config, null, 2));
-
-
-	// handler.config.tasks = handler.config.tasks || {};
-
-	// _.defaults(handler.config.tasks, {
-	// 	preload: [],
-	// 	precompile: [],
-	// 	postcompile: [],
-	// 	appjs: [],
-	// });
 
 	handler.config.tasks = handler.config.tasks || [];
 	var tasks = _.cloneDeep(handler.config.tasks);
 	// handler.logger.trace("handler.config.tasks: " + JSON.stringify(handler.config.tasks, null, 2));
 	tasks = configureTasks(tasks);
-
-	// var pendingTasks = [];
-	// _.forEach(tasks, function(task) {
-	// 	if(_.isString(task)) {
-	// 		// task = { name: task }
-	// 		handler.logger.trace("getting default tasks for module: " + task.name);
-	// 		var target = require(resolve.sync(task.name, { basedir: handler.event.dir.project }));
-	// 		pendingTasks.concat(target.tasks || []);
-	// 		return false;
-	// 	}
-
-	// 	task.events = task.events || [];
-
-	// 	if(_.isEmpty(task.events)) {
-	// 		handler.logger.trace("setting up task: " + task.name);
-	// 		var target = require(resolve.sync(task.name, { basedir: handler.event.dir.project }));
-	// 		task.events = target.events || [];
-	// 	}
-
-	// 	if(_.isString(task.events)) {
-	// 		task.events = [task.events];
-	// 	}
-
-	// });
-
 }
 
 Object.defineProperty(handler, "event", {
