@@ -1,50 +1,86 @@
 {
   "name": "@aplus/core",
-  "version": "0.0.5-beta.5",
-  "description": "Mobile framework for building upon Appcelerator Alloy projects",
+  "version": "1.0.1",
+  "description": "⭐  Axway Amplify module building Alloy projects on Appcelerator Titanium SDK Framework",
   "keywords": [
-    "Appcelerator",
-    "Alloy",
-    "MobileHero",
-    "Alloy+",
-    "aplus"
+    "aplus",
+    "axway",
+    "alloy",
+    "appcelerator",
+    "titanium",
+    "mobile",
+    "turbo",
+    "sdk",
+    "plugin",
+    "amplify",
+    "api-builder",
+    "appcelerator-titanium",
+    "titanium-sdk",
+    "titanium-mobile",
+    "titanium-module",
+    "titanium-alloy",
+    "axway-sdk",
+    "axway-amplify",
+    "brenton-house"
   ],
-  "homepage": "git://github.com/mobilehero/aplus-core",
+  "homepage": "https://brenton.house/saying-goodbye-to-axway-amplify-titanium-31a44f3671de",
   "bugs": {
-    "url": "https://github.com/mobilehero/aplus-core/issues",
-    "email": "info@mobilehero.me"
+    "url": "https://github.com/mobilehero-archive/aplus-core/issues"
   },
   "license": "MIT",
   "author": {
     "name": "Brenton House",
-    "email": "brenton.house@gmail.com",
     "url": "https://github.com/brentonhouse"
   },
   "main": "./aplus-core.js",
   "scripts": {
-    "add": "git add -A",
-    "preadd-version": "npm run add",
-    "add-version": "node scripts/version",
-    "push": "npm run commit --",
-    "commit": "npm run add-version --",
-    "postpush": "git push && git push --tags",
-    "autopull": "node scripts/autopull"
+    "lint": "eslint . --fix",
+    "list": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "prep": "npm install --ignore-scripts",
+    "test": "npm run prep",
+    "prepublishOnly": "git pull && npm test && bump insane",
+    "prepublishOnly2": "git pull && npm test && npm audit fix && bump insane"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mobilehero/aplus-core.git"
+    "url": "git://github.com/mobilehero-archive/aplus-core.git"
   },
   "devDependencies": {
-    "semver": "^5.1.0"
+    "semver": "^7.3.5"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=12"
   },
   "dependencies": {
-    "debug": "^2.2.0",
-    "lodash": "^4.13.1",
-    "resolve": "^1.1.7",
-    "tiapp-dir": "0.0.2",
-    "uglify-js": "^2.6.4"
+    "@geek/cache": "^1.0.2",
+    "@geek/config": "^0.2.4",
+    "@geek/dotenv": "^0.0.9",
+    "@geek/eslint-config": "^1.0.3",
+    "@geek/jsonc": "^1.0.4",
+    "@geek/jwt": "^1.0.1",
+    "@geek/logger": "^1.0.18",
+    "@geek/retry": "^1.0.0",
+    "@geek/spawn": "^0.0.3",
+    "@geek/spinner": "^1.0.0",
+    "@geek/tld": "^2.0.1-1",
+    "@titanium/appcelerator": "^6.0.4",
+    "@titanium/bluebird": "^3.7.9",
+    "@titanium/errors": "^1.0.7",
+    "@titanium/essentials": "^1.0.38",
+    "@titanium/events": "^1.0.20",
+    "@titanium/eventsource": "^1.0.5",
+    "@titanium/jwt": "^1.0.9",
+    "@titanium/module-copier": "^1.0.15",
+    "@titanium/please": "^1.0.17",
+    "@titanium/polyfill": "^1.0.18",
+    "@titanium/querystring": "^1.0.3",
+    "@titanium/tiapp-xml": "^1.0.15",
+    "@titanium/titanium": "^5.4.8",
+    "@titanium/turbo": "^2.2.24",
+    "debug": "^4.3.3",
+    "lodash": "^4.17.21",
+    "resolve": "^1.21.0",
+    "tiapp-dir": "1.0.5",
+    "uglify-js": "^3.14.5"
   }
 }

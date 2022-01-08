@@ -1,3 +1,33 @@
+[//]: # (header-start)
+
+<a href="https://brenton.house/saying-goodbye-to-axway-amplify-titanium-31a44f3671de">
+	<h1 align="center">
+	🪦 RIP Axway Amplify Titanium (2010 - 2022)
+	</h1>
+</a>
+<a href="https://brenton.house/saying-goodbye-to-axway-amplify-titanium-31a44f3671de">
+	<p align="center">
+		<img src="https://cdn.secure-api.org/images/RIP-Axway-Amplify-Titanium.png" alt="RIP Axway Amplify Titanium (2010 - 2022)" width="80%" />
+	</p>
+</a>
+<a href="https://brenton.house/saying-goodbye-to-axway-amplify-titanium-31a44f3671de">
+	<p align="center">
+		🪦 &nbsp; RIP Axway Amplify Titanium (2010 - 2022)
+	</p>
+</a>
+<p>&nbsp;</p>
+<a href="https://brenton.house/saying-goodbye-to-axway-amplify-titanium-31a44f3671de">
+	<h2 align="center">
+		🛑 This project is no longer being maintained 🛑
+	</h2>
+</a>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+[//]: # (header-end)
+
 <h3 align="center">
   <img src="https://cdn.secure-api.org/images/aplus-core.svg" alt="aplus-core logo" />
 </h3>
@@ -13,19 +43,19 @@
 
 <!-- TOC depthFrom:2 depthTo:6 insertAnchor:false orderedList:false updateOnSave:true withLinks:true -->
 
-- [Overview](#overview)
-	- [What is Alloy+?](#what-is-alloy)
-	- [How is this different than Adamantium?](#how-is-this-different-than-adamantium)
-	- [So what makes Alloy+ so awesome?](#so-what-makes-alloy-so-awesome)
-- [Install](#install)
-	- [Install Alloy+ Core only](#install-alloy-core-only)
-	- [Install Alloy+ Bundle 📦](#install-alloy-bundle-)
-- [Usage](#usage)
-- [Templated Parameters](#templated-parameters)
-- [Alloy+ Plugins](#alloy-plugins)
-- [Need Help?](#need-help)
-- [License](#license)
-- [Legal](#legal)
+* [Overview](#overview)
+	* [What is Alloy+?](#what-is-alloy)
+	* [How is this different than Adamantium?](#how-is-this-different-than-adamantium)
+	* [So what makes Alloy+ so awesome?](#so-what-makes-alloy-so-awesome)
+* [Install](#install)
+	* [Install Alloy+ Core only](#install-alloy-core-only)
+	* [Install Alloy+ Bundle 📦](#install-alloy-bundle-)
+* [Usage](#usage)
+* [Templated Parameters](#templated-parameters)
+* [Alloy+ Plugins](#alloy-plugins)
+* [Need Help?](#need-help)
+* [License](#license)
+* [Legal](#legal)
 
 <!-- /TOC -->
 
