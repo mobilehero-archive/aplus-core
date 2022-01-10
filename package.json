@@ -1,6 +1,6 @@
 {
   "name": "@aplus/core",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "⭐  Axway Amplify module building Alloy projects on Appcelerator Titanium SDK Framework",
   "keywords": [
     "aplus",
@@ -46,6 +46,9 @@
     "url": "git://github.com/mobilehero-archive/aplus-core.git"
   },
   "devDependencies": {
+    "@geek/eslint-config": "^1.0.3",
+    "@titanium/eslint-config": "^1.0.14",
+    "eslint": "^8.6.0",
     "semver": "^7.3.5"
   },
   "engines": {
@@ -55,7 +58,6 @@
     "@geek/cache": "^1.0.2",
     "@geek/config": "^0.2.4",
     "@geek/dotenv": "^0.0.9",
-    "@geek/eslint-config": "^1.0.3",
     "@geek/jsonc": "^1.0.4",
     "@geek/jwt": "^1.0.1",
     "@geek/logger": "^1.0.18",
