@@ -1,6 +1,6 @@
 {
   "name": "@aplus/core",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "⭐  Axway Amplify module building Alloy projects on Appcelerator Titanium SDK Framework",
   "keywords": [
     "aplus",
@@ -69,28 +69,28 @@
     "@titanium/appcelerator": "^6.0.31",
     "@titanium/authentication": "^1.0.44",
     "@titanium/authentication-mock": "^1.0.28",
-    "@titanium/authentication-oauth": "^1.0.47",
+    "@titanium/authentication-oauth": "^1.0.48",
     "@titanium/bluebird": "^3.7.37",
     "@titanium/errors": "^1.0.33",
     "@titanium/essentials": "^1.0.67",
     "@titanium/events": "^1.0.44",
-    "@titanium/eventsource": "^1.0.37",
+    "@titanium/eventsource": "^1.0.38",
     "@titanium/identity": "^2.0.36",
     "@titanium/json5": "^1.0.28",
     "@titanium/jsonc": "^1.0.31",
     "@titanium/jwt": "^1.0.34",
     "@titanium/module-copier": "^1.0.42",
-    "@titanium/please": "^1.0.41",
-    "@titanium/polyfill": "^1.0.41",
-    "@titanium/querystring": "^1.0.32",
+    "@titanium/please": "^1.0.42",
+    "@titanium/polyfill": "^1.0.42",
+    "@titanium/querystring": "^1.0.33",
     "@titanium/tiapp-xml": "^1.0.42",
     "@titanium/titanium": "^5.4.40",
-    "@titanium/turbo": "^2.2.59",
+    "@titanium/turbo": "^2.2.60",
     "debug": "^4.3.3",
     "lodash": "^4.17.21",
     "nativeloop": "^1.0.28",
     "resolve": "^1.22.0",
     "tiapp-dir": "^1.0.33",
-    "uglify-js": "^3.14.5"
+    "uglify-js": "^3.15.0"
   }
 }
