@@ -1,6 +1,6 @@
 {
   "name": "@aplus/core",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "⭐  Axway Amplify module building Alloy projects on Appcelerator Titanium SDK Framework",
   "keywords": [
     "aplus",
@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@geek/eslint-config": "^1.0.3",
-    "@titanium/eslint-config": "^1.0.40",
+    "@titanium/eslint-config": "^1.0.41",
     "eslint": "^8.8.0",
     "semver": "^7.3.5"
   },
@@ -80,10 +80,10 @@
     "@titanium/jsonc": "^1.0.33",
     "@titanium/jwt": "^1.0.37",
     "@titanium/module-copier": "^1.0.44",
-    "@titanium/please": "^1.0.43",
+    "@titanium/please": "^1.0.44",
     "@titanium/polyfill": "^1.0.43",
     "@titanium/querystring": "^1.0.35",
-    "@titanium/tiapp-xml": "^1.0.44",
+    "@titanium/tiapp-xml": "^1.0.45",
     "@titanium/titanium": "^5.4.42",
     "@titanium/turbo": "^2.2.61",
     "debug": "^4.3.3",
