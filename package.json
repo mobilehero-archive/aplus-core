@@ -1,6 +1,6 @@
 {
   "name": "@aplus/core",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "description": "⭐  Axway Amplify module building Alloy projects on Appcelerator Titanium SDK Framework",
   "keywords": [
     "aplus",
@@ -60,24 +60,24 @@
     "@geek/dotenv": "^0.0.9",
     "@geek/jsonc": "^1.0.8",
     "@geek/jwt": "^1.0.1",
-    "@geek/logger": "^1.0.18",
+    "@geek/logger": "^1.0.19",
     "@geek/retry": "^1.0.0",
     "@geek/spawn": "^1.0.2",
     "@geek/spinner": "^1.0.2",
     "@geek/tld": "^2.0.1-1",
-    "@nativeloop/mobile": "^1.0.37",
-    "@titanium/appcelerator": "^6.0.37",
+    "@nativeloop/mobile": "^1.0.38",
+    "@titanium/appcelerator": "^6.0.38",
     "@titanium/authentication": "^1.0.49",
     "@titanium/authentication-mock": "^1.0.34",
-    "@titanium/authentication-oauth": "^1.0.53",
-    "@titanium/bluebird": "^3.7.42",
-    "@titanium/errors": "^1.0.39",
+    "@titanium/authentication-oauth": "^1.0.54",
+    "@titanium/bluebird": "^3.7.43",
+    "@titanium/errors": "^1.0.40",
     "@titanium/essentials": "^1.0.71",
     "@titanium/events": "^1.0.48",
     "@titanium/eventsource": "^1.0.43",
     "@titanium/identity": "^2.0.41",
     "@titanium/json5": "^1.0.33",
-    "@titanium/jsonc": "^1.0.33",
+    "@titanium/jsonc": "^1.0.35",
     "@titanium/jwt": "^1.0.40",
     "@titanium/module-copier": "^1.0.45",
     "@titanium/please": "^1.0.48",
@@ -91,6 +91,6 @@
     "nativeloop": "^1.0.33",
     "resolve": "^1.22.0",
     "tiapp-dir": "^1.0.37",
-    "uglify-js": "^3.15.0"
+    "uglify-js": "^3.15.1"
   }
 }
